@@ -1,4 +1,4 @@
-import ValidParam from "../../../framework/verify/ValidParam";
+import ValidParam from "../../../framework/verify/RequestParam";
 import Com from "../../../framework/basics/Com";
 
 class LogServices {

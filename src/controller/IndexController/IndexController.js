@@ -1,5 +1,5 @@
 import {Controller, Log, PostRequest} from '../../../framework'
-import ValidParam from "../../../framework/verify/ValidParam";
+import ValidParam from "../../../framework/verify/RequestParam";
 
 
 @Controller('/sun')

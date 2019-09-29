@@ -1,16 +1,14 @@
 import Com from "../../../framework/basics/Com";
-import ValidParam from "../../../framework/verify/ValidParam";
 
 class IndexServices {
 
     @Com()
     async list(com) {
-        const list = await this.lists(com);
-        return list;
+        return await this.lists(com);
     }
 
     @Com()
-    async lists  (params,com) {
+    async lists  (com) {
         return await com.query(`SELECT * FROM city`);
     }
 

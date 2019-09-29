@@ -33,7 +33,6 @@ export default function Log(targetName, mold = false) {
                     await LogServices.insert(option);
                     resolve(_result);
                 } catch (err) {
-                    console.log(err.message);
                     reject(err);
                     throw new Error(err)
                 }

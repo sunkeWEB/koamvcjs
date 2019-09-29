@@ -8,7 +8,6 @@ var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 var colors = require('colors/safe');
-var Config = require("../webConfig");
 /**
  * Get port from environment and store in Express.
  */
@@ -87,5 +86,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log(colors.red('服务启动成功: ' +new Date().toLocaleString()+ "     " + bind));
+  console.log(colors.red('服务启动成功: ' +new Date().toLocaleString()+ "     端口：" + addr.port));
 }

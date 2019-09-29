@@ -23,7 +23,7 @@
     /**
      * 是否展示扫描的路由文件及路由
      */
-    static isShowScanningController = false;
+    static isShowScanningController = true;
 
     /**
      * 是否验证路由 验证逻辑代码在 framework/auth/token.js

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c33b1a78-2bc4-41b1-b35c-32e902e82d3b" name="Default Changelist" comment="" />
+    <list default="true" id="c33b1a78-2bc4-41b1-b35c-32e902e82d3b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/framework/basics/GetRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/basics/Log.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/basics/Log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/verify/ValidParam.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/verify/RequestParam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/verify/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/verify/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IndexController/IndexController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IndexController/IndexController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LibraryController/LibraryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LibraryController/LibraryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/IndexServices/IndexServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/IndexServices/IndexServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LogServices/LogServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LogServices/LogServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/webConfig.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +31,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/koamvcjs" />
+  </component>
   <component name="ProjectId" id="1RMCpCN4y2VsJeL3UrkFtEOFZdg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../yazhongproject/wisdomsite-server" />
@@ -106,6 +127,7 @@
       <updated>1569467758561</updated>
       <workItem from="1569467759932" duration="40043000" />
       <workItem from="1569656438293" duration="8613000" />
+      <workItem from="1569739335941" duration="3644000" />
     </task>
     <servers />
   </component>
@@ -117,9 +139,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controller/LibraryController/LibraryController.js</url>
-          <line>18</line>
+          <line>23</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="91" />
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
