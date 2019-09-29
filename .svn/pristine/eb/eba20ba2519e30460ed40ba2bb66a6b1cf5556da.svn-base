@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "LauAttach to nodench",
+            "type": "node",
+            "request": "attach",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "dev"    //这里的dev就对应package.json中的scripts中的dev
+            ],
+            "port": 9898
+        }
+    ]
+}

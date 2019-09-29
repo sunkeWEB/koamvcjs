@@ -1,0 +1,13 @@
+import {ResultBean} from "../basics/ResultBean";
+
+/**
+ * 处理全局异常
+ */
+export default async (ctx, next) => {
+    try {
+        const result = await next();
+        ctx.body = result;
+    } catch (e) {
+        ctx.body = ResultBean.error('ss', e.message);
+    }
+}

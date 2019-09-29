@@ -1,0 +1,37 @@
+import Request from 'koa/lib/request'
+
+export default function ValidParam(opt) {
+    if (!Array.isArray(opt)) throw new Error("ValidParam 参数不是数组!");
+    return function (target, name, descriptor) {
+        return {
+            ...descriptor,
+            value(...arg) {
+                let RequestParams = {};
+                for (let params of arg) {
+                    if (Object.prototype.toString.call(params) === '[object Object]' && !Array.isArray(params)) {
+                        if (params.request && params.request.method) {
+                            const method = params.request.method;
+                            if (method === "POST") RequestParams = params.request.body;
+                            else if (method === "GET") RequestParams = params.request.params;
+                            else throw new Error("不支持的请求方式：" + method);
+                        }
+                    }
+                }
+
+                // 参数验证
+                for (let i=0;i<opt.length;i++) {
+                    const item = opt[i];
+                    if(typeof(item) == "string") {
+                        if(!Reflect.has(RequestParams,item)) throw new Error("参数不能为空：" + item);
+                    }else if (Object.prototype.toString.call(item) === '[object Object]' && !Array.isArray(item)){
+                        const {name,rules=[]} = item;
+                        if(!name) throw new Error("验证参数必須包含name");
+                        if(!Array.isArray(rules)) throw new Error("验证参数规则必須是一个数组");
+                        if(!Reflect.has(RequestParams,name)) throw new Error("参数不能为空：" + name);
+                    }
+                }
+                return descriptor.value.apply(this, [RequestParams,...arg]);
+            }
+        }
+    }
+};

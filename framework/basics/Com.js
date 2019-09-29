@@ -1,0 +1,45 @@
+import Config from "../../webConfig";
+import {DataCommand} from "../../framework/pool/mysql";
+
+/**
+ *  opt=true 時候 開啓事務
+ */
+export default function Com(opt, dataConnections = Config.dataConnection) {
+    return function (target, name, desc) {
+        let value = desc.value;
+        desc.value = function () {
+            const that = this;
+            let args = Array.from(arguments);
+            let result;
+            let isCom = false;
+            for (let i=0;i<args.length;i++) {
+                if(args[i] instanceof DataCommand) isCom = true;
+            }
+
+
+            return new Promise(async (resolve, reject) => {
+                if(isCom) { // 如果有 DataCommand 对象
+                    result = await value.apply(that, args);
+                    return resolve(result);
+                }
+
+                let com = new DataCommand(dataConnections);
+                if (opt) {
+                    var connection = await com.getConnection();
+                }
+                args.push(com);
+                try {
+                    connection && connection.beginTransaction();
+                    result = await value.apply(that, args);
+                    connection && connection.commit();
+                    return resolve(result);
+                } catch (err) {
+                    connection && connection.rollback();
+                    reject(err);
+                } finally {
+                    com.end();
+                }
+            })
+        }
+    }
+}

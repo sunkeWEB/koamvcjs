@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c33b1a78-2bc4-41b1-b35c-32e902e82d3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/basics/Log.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/basics/Log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/basics/PostRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/basics/PostRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/basics/RegisterRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/basics/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/globaHandle/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/globaHandle/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/verify/ValidParam.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/verify/ValidParam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IndexController/IndexController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IndexController/IndexController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LibraryController/LibraryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LibraryController/LibraryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/IndexServices/IndexServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/IndexServices/IndexServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LogServices/LogServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LogServices/LogServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/webConfig.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RMCpCN4y2VsJeL3UrkFtEOFZdg" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yazhongproject/wisdomsite-server" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\koa\framework\auth" />
+      <recent name="F:\koa\framework\pool" />
+      <recent name="F:\koa\tools" />
+      <recent name="F:\koa\framework\basics" />
+      <recent name="F:\koa\src\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\koa\src\controller\LibraryController" />
+      <recent name="F:\koa\src\controller\Index" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="RegisterRouter.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="RegisterRouter.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.RegisterRouter.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\sunke\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\koamvcjs" />
+          <option name="myCopyRoot" value="F:\koamvcjs" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="F:\koamvcjs" />
+          <option name="myCopyRoot" value="F:\koamvcjs" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c33b1a78-2bc4-41b1-b35c-32e902e82d3b" name="Default Changelist" comment="" />
+      <created>1569467758561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569467758561</updated>
+      <workItem from="1569467759932" duration="40043000" />
+      <workItem from="1569656438293" duration="8570000" />
+      <workItem from="1569672050433" duration="9101000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/LogServices/LogServices.js</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/framework/basics/Com.js</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="js.build_tools.npm">
+        <watch expression="target.__proto__" />
+        <watch expression="target" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

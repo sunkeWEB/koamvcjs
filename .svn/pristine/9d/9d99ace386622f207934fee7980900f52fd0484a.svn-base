@@ -1,0 +1,24 @@
+import IndexServices from "../../services/IndexServices/IndexServices";
+import {Controller,PostRequest,Log} from "../../../framework";
+import ValidParam from "../../../framework/verify/ValidParam";
+
+@Controller('/library')
+export class LibraryController {
+
+    age = 10;
+
+    @PostRequest('/oppo')
+    @ValidParam([])
+    async Poop(params,ctx,next) {
+        this.sun();
+        const list = await IndexServices.lists();
+        return list;
+    }
+
+    async sun () {
+        console.log('++++++++++++++',this.age);
+    }
+
+}
+
+

@@ -1,0 +1,41 @@
+import Koa from 'koa'
+import views from 'koa-views'
+import json from 'koa-json'
+import onerror from 'koa-onerror'
+import bodyparser from 'koa-bodyparser'
+import Auth from './framework/auth/token'
+import App from './framework/basics/RegisterRouter'
+import GloabHandle from './framework/globaHandle'
+const app = new Koa();
+import KoaRouter from 'koa-router';
+
+const router = KoaRouter();
+// 全局处理
+app.use(GloabHandle);
+
+// error handler
+onerror(app);
+
+// middlewares
+app.use(bodyparser({
+  enableTypes: ['json', 'form', 'text']
+}));
+
+// 使用token验证
+// app.use(Auth);
+
+app.use(json());
+app.use(require('koa-static')(__dirname + '/public'));
+
+
+
+
+App.start(app);
+
+// error-handling
+app.on('error', (err, ctx) => {
+  console.error('server error', err, ctx)
+});
+
+
+module.exports = app;

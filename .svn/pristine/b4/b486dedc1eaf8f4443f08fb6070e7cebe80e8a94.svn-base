@@ -1,0 +1,30 @@
+import {Com} from "../../../framework";
+
+@Server()
+class IndexServices {
+
+    @Com()
+    async list(com) {
+        const list = await this.lists(com);
+        return list;
+    }
+
+    @Com()
+    async lists  (com) {
+        return await com.query(`SELECT * FROM city`);
+    }
+
+}
+
+export default new IndexServices();
+
+function Server() {
+    return  (target, name, desc ) => {
+        Object.defineProperty(target, "ROUTERS", {
+            value: 100,
+            configurable: false,
+            enumerable: true,
+            writable: false,
+        });
+    }
+}

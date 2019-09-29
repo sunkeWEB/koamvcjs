@@ -1,0 +1,12 @@
+
+export default function PostRequest(key) {
+    return function (target, name, desc)  {
+        let value = desc.value;
+        desc.value =  function (route) {
+            const {opts} = route;
+            console.log("======注册路由====== ","METHODS：POST"+"      "+"PATH："+opts.prefix+key);
+            route.post.apply(route, [key, value])
+        };
+        return desc;
+    }
+}

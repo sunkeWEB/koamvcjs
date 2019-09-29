@@ -1,0 +1,15 @@
+import {Com} from "../../../framework";
+import ValidParam from "../../../framework/verify/ValidParam";
+
+class LogServices {
+
+    @Com()
+    @ValidParam([])
+    async insert(params, com) {
+        const {result, target, details, remark, method, userIp, userId} = params;
+        await com.query(`INSERT INTO log(result,target,details,remark,method,userIp,userId) VALUES(?,?,?,?,?,?,?)`, [result, target, details, remark, method, userIp, userId]);
+    }
+
+}
+
+export default new LogServices();

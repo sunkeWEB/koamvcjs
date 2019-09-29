@@ -1,0 +1,48 @@
+import fs from 'fs';
+import path from 'path';
+import colors from 'colors/safe';
+import KoaRouter from 'koa-router';
+class App {
+
+    _application;
+
+    start(application) {
+        this._application = application;
+        this.scanController(path.resolve('./src/controller'));
+    }
+
+    /**
+     * 扫描controller
+     */
+    scanController(scannPath) {
+        fs.stat(scannPath, (err, stats) => {
+            if(stats.isDirectory()) {
+                fs.readdir(scannPath, (err, item) => {
+                    if (err) throw new Error('扫描controller失败：' + err);
+                    for (let i = 0; i < item.length; i++) {
+                        this.scanController(path.join(scannPath, item[i]));
+                    }
+                })
+            }else{
+                console.log(colors.blue("注册文件："+scannPath));
+                const controllers = require(scannPath);
+                for (const name in controllers) {
+
+                    if (controllers.hasOwnProperty(name)) {
+                        // 注册路由
+                        const route = controllers[name]['ROUTER'];
+
+                        if (route instanceof KoaRouter) {
+                            this._application
+                                .use(route.routes())
+                                .use(route.allowedMethods());
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+}
+
+export default new App();

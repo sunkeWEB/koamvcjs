@@ -1,0 +1,15 @@
+
+import PostRequest from "../../../framework/basics/PostRequest";
+import Controller from "../../../framework/basics/Controller";
+import IndexServices from '../../services/IndexServices/IndexServices'
+import {ResultBean} from "../../../framework/basics/ResultBean";
+
+@Controller('/sun1')
+export class PoopController {
+
+    @PostRequest('/oppo')
+    async Poop(ctx) {
+        const list =await IndexServices.list();
+        return ResultBean.success(list,"获取成功");
+    }
+}

@@ -1,0 +1,21 @@
+import KoaRouter from "koa-router";
+import {been} from '../index'
+export default function Controller(controllerName) {
+    const router = new KoaRouter();
+    router.prefix(controllerName);
+    return function (target, name, desc)  {
+        // been.insert("controllerName",target);
+        const methods = Object.getOwnPropertyDescriptors(target.prototype);
+        for (const name in methods) {
+            if (name !== 'constructor' && typeof methods[name].value === 'function') {
+                methods[name].value(router,target);
+            }
+        }
+        Object.defineProperty(target, "ROUTER", {
+            value: router,
+            configurable: false,
+            enumerable: true,
+            writable: false,
+        }).bind(this)
+    }
+}

@@ -1,0 +1,29 @@
+import {Controller, PostRequest} from '../../../framework'
+import IndexServices from "../../services/IndexServices/IndexServices";
+
+@Controller('/library')
+export class LibraryController {
+
+
+    @PostRequest('/index')
+    async list(ctx) {
+        ctx.body = {code: 2220};
+    }
+
+    @PostRequest('/oppo')
+    async Poop() {
+        // const list = await IndexServices.lists();
+        return [];
+        // ctx.body = list;
+    }
+
+    sun () {}
+
+}
+
+function RequestParam(type) {
+    return function (target, key, index) {
+
+    }
+}
+

@@ -1,0 +1,12 @@
+import {Controller,PostRequest} from '../../../framework'
+import IndexServices from "../../services/IndexServices/IndexServices";
+
+
+@Controller('/sun1')
+export class PoopController {
+
+    @PostRequest('/oppo')
+    async Poop(ctx) {
+        return [1];
+    }
+}

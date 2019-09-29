@@ -1,0 +1,24 @@
+﻿class Config {
+
+    /**
+     * 数据库连接
+     */
+    static dataConnection = {
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'root',
+        database: 'world',
+        char: 'utf8mb4',
+        secret: '397633183@qq.com_?_%%^^()', // token加密
+    };
+
+    /**
+     * 是否打印SQL
+     */
+    static printSQL = false;
+
+
+
+
+}

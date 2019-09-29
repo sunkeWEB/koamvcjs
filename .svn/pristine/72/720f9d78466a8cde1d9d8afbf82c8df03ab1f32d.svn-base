@@ -1,0 +1,18 @@
+import Com from "../../../framework/basics/Com";
+
+class IndexServices {
+
+    @Com()
+    async list(com) {
+        const list = await this.lists(com);
+        return list;
+    }
+
+    @Com()
+    async lists  (com) {
+        return await com.query(`SELECT * FROM citys`);
+    }
+
+}
+
+export default new IndexServices();
