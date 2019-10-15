@@ -17,6 +17,7 @@ class Application {
         this._application = application;
         this.startMiddleware();
         this.scanController(path.resolve('./src/controller'));
+        this.isExistDirAndCreate(path.resolve('./'+Config.publicPath));
     }
 
     startMiddleware () {
@@ -65,6 +66,14 @@ class Application {
         });
     }
 
+    /**
+     * 检测目录是否存在 如静态资源目录
+     */
+    isExistDirAndCreate (filepath) {
+        if (!fs.existsSync(filepath)) { // 创建文件夹
+            fs.mkdirSync(filepath);
+        }
+    }
 }
 
 export default new Application();

@@ -1,5 +1,8 @@
 ﻿class Config {
 
+    /**
+     * 启动服务端口
+     */
     static startPort = 9093;
 
     /**

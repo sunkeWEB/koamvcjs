@@ -13,12 +13,12 @@ class IndexServices {
     @JLock('sun')
     @JLock('ke')
     async lists(name, com) {
-        return await com.query(`SELECT * FROM user`);
+        return await com.query(`SELECT * FROM city`);
     }
 
     @Com()
     async page(page, com) {
-        return await com.pageQuery(`SELECT * FROM users`, [], page);
+        return await com.pageQuery(`SELECT * FROM city`, [], page);
     }
 
 }
