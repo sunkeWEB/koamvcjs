@@ -1,5 +1,5 @@
 import mysql from "mysql";
-import { PagingInfo, asyncCall } from "./util";
+import { Page, asyncCall } from "./util";
 import Config from '../../webConfig'
 
 /**
@@ -69,13 +69,15 @@ export class DataCommand {
         if (!pages) return await this.query(sql, params);
 
         let sql0 = `select count(*) as cnt from (${sql}) as temp`;
-        if(name) sql0 = `select count(*) as cnt from ${name}`;
+        if (name) sql0 = `select count(*) as cnt from ${name}`;
 
         let {cnt} = await this.queryOne(sql0, params);
         pages.size = cnt;
         let start = pages.pageIndex * pages.pageSize;
         let sql1 = `${sql} limit ${start},${pages.pageSize}`;
-        return await this.query(sql1, params);
+        const ret = await this.query(sql1, params);
+        pages.data = ret;
+        return ret;
     }
 
 
@@ -232,7 +234,6 @@ export class DataCommand {
      */
     end() {
         try {
-            console.log("关闭");
             this.connection && this.connection.end();
         }
         catch (e) {

@@ -10,7 +10,7 @@ export function jPromise(callback) {
 
 // 琐
 var jLockCache = new Map();
-export async function jLock(key) {
+export async function JsLock(key) {
     var locker = jLockCache.get(key);
     var awaitObj;
     if (locker) {

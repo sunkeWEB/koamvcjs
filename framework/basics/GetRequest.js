@@ -1,9 +1,9 @@
 import Config from "../../webConfig";
 
 export default function GetRequest(key) {
-    return function (target, name, desc)  {
+    return function (target, name, desc) {
         let value = desc.value;
-        desc.value =  function (route,targets) {
+        desc.value = function (route, targets) {
             const handlers = [];
             const {opts} = route;
             const handler = value.bind(targets);
@@ -15,12 +15,12 @@ export default function GetRequest(key) {
                     } else {
                         // TODO 返回其他形式的数据
                     }
-                }catch (e) {
-                    throw new Error(e.message)
+                } catch (e) {
+                    throw new Error(typeof e === "string" ? e : e.message)
                 }
             });
-            if(Config.isShowScanningController){
-                console.log("======注册路由====== ","METHODS：GET"+"      "+"PATH："+opts.prefix+key);
+            if (Config.isShowScanningController) {
+                console.log("======注册路由====== ", "METHODS：GET" + "      " + "PATH：" + opts.prefix + key);
             }
 
             route.get.apply(route, [key, ...handlers]);

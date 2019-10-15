@@ -2,7 +2,7 @@
 /**
  * 分页描述
  */
-export class PagingInfo {
+export class Page {
     _pageIndex = 0;
 
     /** 
@@ -52,12 +52,26 @@ export class PagingInfo {
         if (this.pageIndex < 0) this.pageIndex = 0;
         else if (this.pageIndex >= this.pageCount) this.pageIndex = this.pageCount - 1;
     }
+
+    _data = [];
+    /**
+     * 数据源
+     *
+     */
+    get data () {
+        return this._data;
+    }
+    set data (data) {
+        this._data = data;
+    }
+
     toJson() {
         return {
             pageIndex: this.pageIndex,
             pageSize: this.pageSize,
             pageCount: this.pageCount,
-            size: this.size
+            size: this.size,
+            data:this.data
         };
     }
 }

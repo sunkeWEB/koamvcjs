@@ -8,8 +8,8 @@ export class IndexController {
     @PostRequest('/index')
     @ValidParam(['age'])
     async list(params,ctx) {
-        const list = [{name: 'sun1'}];
-        ctx.body = list;
+        const list = [{name: 'sun12'}];
+        return list;
     }
 
 }

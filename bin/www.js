@@ -8,10 +8,11 @@ var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 var colors = require('colors/safe');
+import Config from '../webConfig'
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || '9093');
+var port = normalizePort(process.env.PORT || Config.startPort);
 // app.set('port', port);
 
 /**

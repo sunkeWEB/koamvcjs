@@ -1,27 +1,47 @@
 import IndexServices from "../../services/IndexServices/IndexServices";
 import {Controller,PostRequest,RequestParam,Log,GetRequest} from "../../../framework";
+import {Page} from "../../../framework/pool/util";
+import KoaMulters from 'koa-multer';
+import FileUpload from "../../../framework/files/upload";
+
 
 @Controller('/library')
 export class LibraryController {
 
     age = 10;
 
+    /**
+     * 验证参数
+     */
     @PostRequest('/oppo')
-    @Log("添加")
-    @RequestParam([{name:'age',rules:['isRequired']}])
+    @RequestParam([{name: 'age', rules: ['isRequired']}])
     async Poop(params) {
-        this.sun();
-        const list = await IndexServices.lists("sun");
-        return list;
-    }
-
-    async sun () {
-        console.log('++++++++++++++',this.age);
+        return await IndexServices.lists('sun');
     }
 
     @GetRequest('/abc')
     async list () {
         return await IndexServices.list();
+    }
+
+    /**
+     * 分页
+     */
+    @GetRequest('/test')
+    async test() {
+        const page = new Page();
+        await IndexServices.page(page);
+        return page.toJson();
+    }
+
+    /**
+     * 文件上传
+     */
+    @PostRequest('/file')
+    @FileUpload('files','file')
+    async upload (ctx) {
+        const {mimetype,path,size,filename} =  ctx.req.fileupload;
+        return ctx.req.fileupload;
     }
 
 }

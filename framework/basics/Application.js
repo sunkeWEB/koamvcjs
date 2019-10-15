@@ -22,11 +22,14 @@ class Application {
     startMiddleware () {
         // 使用token验证
         if (Config.isAuth) this._application.use(Auth);
-        if (Config.publicPath) this._application.use(require('koa-static')(__dirname + '/'+Config.publicPath));
+        if (Config.publicPath) this._application.use(require('koa-static')(path.resolve(__dirname,"../../",Config.publicPath)));
         this._application.use(json());
         this._application.use(GloabHandle);
         this._application.use(bodyparser({
-            enableTypes: ['json', 'form', 'text']
+            enableTypes: ['json', 'form', 'text'],
+            formLimit:"5mb",
+            jsonLimit:"5mb",
+            textLimit:"5mb"
         }));
     }
 

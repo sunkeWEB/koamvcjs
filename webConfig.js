@@ -1,6 +1,6 @@
 ﻿class Config {
 
-    static startPort = 9094;
+    static startPort = 9093;
 
     /**
      * 数据库连接
