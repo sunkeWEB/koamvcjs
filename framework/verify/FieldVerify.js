@@ -5,8 +5,8 @@ import Card from './Card'
 export default class FieldVerify {
 
     /**
-     * 
-     * @param {string} fieldName 验证字段名字 
+     *
+     * @param {string} fieldName 验证字段名字
      * @param {string} fieldValue 验证的值
      */
     constructor(fieldValue,fieldName = '') {
@@ -90,7 +90,7 @@ export default class FieldVerify {
         if (typeof opt != 'object') throw new Error('isMinAndMaxLen ：验证规则错误');
         let { min, max } = opt;
         if (min && this.fieldValue.length < min) throw new Error(opt.msg);
-        
+
         if (max && this.fieldValue.length > max) throw new Error(opt.msg);
 
         return this;
@@ -120,7 +120,7 @@ export default class FieldVerify {
         throw new Error(opt.msg);
     }
 
-    /** 
+    /**
      * 监测方法是否写对 兼用康享游 参数验证
      * @param {string} fname 函数名称
      */
@@ -142,6 +142,17 @@ export default class FieldVerify {
         opt = { msg: "参数长度不等于：", ...opt };
         if(this.fieldValue != opt.val) throw new Error(opt.msg);
         return this;
+    }
+
+    /**
+     * 是否是邮箱
+     */
+    isEmail (opt={}) {
+        opt = { msg: "邮箱不合法", ...opt };
+        if (new Card().validateIdCard(this.fieldValue)) {
+            return this;
+        }
+        throw new Error(opt.msg);
     }
 
 }
