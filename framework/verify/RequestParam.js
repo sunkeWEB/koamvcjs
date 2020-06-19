@@ -18,7 +18,7 @@ export default function RequestParam(opt) {
                         if (params.request && params.request.method) {
                             const method = params.request.method;
                             if (method === "POST") RequestParams = params.request.body;
-                            else if (method === "GET") RequestParams = params.request.params;
+                            else if (method === "GET") RequestParams = params.request.params || params.request.query;
                             else throw new Error("不支持的请求方式：" + method);
                         }
                     }
@@ -32,13 +32,15 @@ export default function RequestParam(opt) {
                     if (typeof (item) == "string") {
                         if (!Reflect.has(RequestParams, item)) throw new Error("参数不能为空：" + item);
                     } else if (Object.prototype.toString.call(item) === '[object Object]' && !Array.isArray(item)) {
-                        const {name, rules = [], message} = item;
+                        let {name, rules = ["isRequired"], message} = item;
                         if (!name) throw new Error("验证参数必须包含name");
                         if (Array.isArray(rules)) {
                             for (let i = 0; i < rules.length; i++) {
                                 if (Field[rules[i]]) { // 检验验证类是否有方法 在验证
-                                    Field.setField(Reflect.has(RequestParams, name));
-                                    if (!Field[rules[i]]) throw new Error("参数错误");
+                                    Field.setField(Reflect.get(RequestParams, name));
+                                    if (!(Field[rules[i]](message || `参数不能为空: ${name}`))) {
+                                        throw new Error(message || `参数不能为空: ${name}`);
+                                    }
                                 } else {
                                     throw new Error("验证方法不存在:" + rules[i]);
                                 }
